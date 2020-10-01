@@ -1,1 +1,5 @@
+
 *.txt
+TodoApp/__pycache__
+todo_app/__pycache__
+todo_app/migrations
