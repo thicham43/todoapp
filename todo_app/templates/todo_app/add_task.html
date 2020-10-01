@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Manage Your TODOs Here</title>
+    </head>
+
+    <body>
+        <div id="header">
+        </div>
+
+        <div id="container">
+            <p>Register a new task:</p>
+            <br>
+            <form action="{% url "todo_app:index" %}" method="post">
+                {% csrf_token %}
+                <label for="title">Title</label>
+                <input id="title" type="text" name="title">
+                <br>
+                <label for="comment">Comment</label>
+                <input id="comment" type="text" name="comment">
+                <br>
+                <label for="schedule_date">Scheduled For</label>
+                <input id="schedule_date" type="date" name="schedule_date">
+                <br>
+                <input type="submit" value="Save">
+            </form>
+        </div>
+
+        <div id="footer">
+        </div>
+    </body>
+</html>

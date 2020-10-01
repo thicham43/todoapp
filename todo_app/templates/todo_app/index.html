@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Manage Your TODOs Here</title>
+    </head>
+    <body>
+        <div id="header">
+        </div>
+
+        <div id="container">
+            {% if not tasks %} <p>No tasks are planned yet.</p> {% endif %}
+
+            <form action="{% url "todo_app:add_task" %}" method="post">
+                {% csrf_token %}
+                <strong>{{ count_tasks }} Tasks </strong>
+                <button type="submit">New Task</button>
+            </form>
+            <br>
+            {% if tasks %}
+                <table>
+                    <thead>
+                        <td>Title</td>
+                        <td>Comment</td>
+                        <td>Scheduled For</td>
+                        <td>Overdue ?</td>
+                        <td>Actions</td>
+                    </thead>
+                    {% for task in tasks %}
+                        <tr>
+                            <td>{{ task.title }}</td>
+                            <td>{{ task.comment }}</td>
+                            <td>{{ task.schedule_date }}</td>
+                            <td>
+                                {% if task.is_overdue %}
+                                    {{ task.days_overdue }} Day{{ task.days_overdue|pluralize }} ago
+                                {% else %}
+                                    Not yet
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="{% url "todo_app:edit_task" task.id %}">Edit</a>
+                                <a href="{% url "todo_app:remove_task" task.id %}">Remove</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+        </div>
+
+        <div id="footer">
+        </div>
+    </body>
+</html>

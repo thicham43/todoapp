@@ -1,0 +1,32 @@
+
+
+        this is a simple to do app that helps manage your daily tasks
+
+Design/overview:
+
+    it is a single page app with 3 sections:        header        container        footer
+        header:
+            search bar
+
+    container:
+        table of tasks to do (title,    comment,     datetime,     actions(done, edit, remove)  )
+        button to add new task
+        text to display tasks count
+
+    footer:
+        copyrights - 2020
+
+Models:
+    Task:  title, comment, schedule_date, is_done, is_overdue
+
+URLs:
+    / or /tasks     ---> home page
+    /add            ---> form page to add new task
+    /edit/task_id   ---> form page to edit a task
+
+Views:
+    / or /tasks     --->  index         --->  template:
+    /add            --->  add_task      --->  template:
+    /edit/task_id   --->  edit_task     --->  template:
+
+------------>    introduce GraphQL API calls Django <--> Postgresql
