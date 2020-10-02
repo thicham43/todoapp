@@ -19,20 +19,22 @@ class TaskListView(generic.ListView):
 
 
 class TaskCreateView(generic.edit.CreateView):
+    template_name = 'todo_app/add_task.html'
     model = Task
     fields = ['title', 'comment', 'schedule_date']
-    success_url = "/todo/"
+    success_url = "/todo/all"
 
 
 class TaskUpdateView(generic.edit.UpdateView):
+    template_name = 'todo_app/update_task.html'
     model = Task
     fields = ['title', 'comment', 'schedule_date']
-    success_url = "/todo/"
+    success_url = "/todo/all"
 
 
 class TaskDeleteView(generic.edit.DeleteView):
     model = Task
-    success_url = "/todo/"
+    success_url = "/todo/all"
 
     @decorators.method_decorator(login_required)
     def delete(self, request, *args, **kwargs):

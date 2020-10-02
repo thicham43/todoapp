@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Manage Your TODOs Here</title>
@@ -12,7 +12,7 @@
         <div id="container">
             <p>Register a new task:</p>
             <br>
-            <form action="{% url "todo_app:index" %}" method="post">
+            <form method="post">
                 {% csrf_token %}
                 <label for="title">Title</label>
                 <input id="title" type="text" name="title">
