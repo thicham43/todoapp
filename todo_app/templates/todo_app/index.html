@@ -9,7 +9,7 @@
         </div>
 
         <div id="container">
-            {% if not tasks %} <p>No tasks are planned yet.</p> {% endif %}
+            {% if not all_tasks %} <p>No tasks are planned yet.</p> {% endif %}
 
             <form action="{% url "todo_app:add_task" %}" method="post">
                 {% csrf_token %}
@@ -17,7 +17,7 @@
                 <button type="submit">New Task</button>
             </form>
             <br>
-            {% if tasks %}
+            {% if all_tasks %}
                 <table>
                     <thead>
                         <td>Title</td>
@@ -26,7 +26,7 @@
                         <td>Overdue ?</td>
                         <td>Actions</td>
                     </thead>
-                    {% for task in tasks %}
+                    {% for task in all_tasks %}
                         <tr>
                             <td>{{ task.title }}</td>
                             <td>{{ task.comment }}</td>
@@ -39,8 +39,8 @@
                                 {% endif %}
                             </td>
                             <td>
-                                <a href="{% url "todo_app:edit_task" task.id %}">Edit</a>
-                                <a href="{% url "todo_app:remove_task" task.id %}">Remove</a>
+                                <a href="{% url "todo_app:update_task" task.id %}">Edit</a>
+                                <a href="{% url "todo_app:delete_task" task.id %}">Remove</a>
                             </td>
                         </tr>
                     {% endfor %}

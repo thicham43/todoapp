@@ -3,8 +3,8 @@ from . import views
 
 app_name = "todo_app"
 urlpatterns = [
-                path('', views.index, name='index'),
-                path('add', views.add_task, name='add_task'),
-                path('edit/<int:task_id>', views.edit_task, name='edit_task'),
-                path('remove/<int:task_id>', views.remove_task, name='remove_task'),
+                path('', views.TaskListView.as_view(), name='index'),
+                path('add/', views.TaskCreateView.as_view(), name='add_task'),
+                path('<int:pk>', views.TaskUpdateView.as_view(), name='update_task'),
+                path('delete/<int:pk>', views.TaskDeleteView.as_view(), name='delete_task'),
             ]
