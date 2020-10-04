@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Manage Your TODOs Here</title>
-    </head>
-    <body>
+{% extends "todo_app/base.html" %}
 
-        <form method="post">
-            {% csrf_token %}
+{% block title %}Update Task{% endblock %}
 
-            <!-- Using the formset -->
-            {{ form.as_p }}
+{% block container %}
 
-            <input type="submit" value="Save">
-        </form>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div>
+                {{ field.label_tag }} {{ field }}
+                {% if field.help_text %}
+                    {{ field.help_text|safe }}
+                {% endif %}
+            </div>
+        {% endfor %}
+        <input type="submit" value="Save">
+    </form>
 
-    </body>
-</html>
+{% endblock %}

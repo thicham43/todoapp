@@ -1,33 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Manage Your TODOs Here</title>
-    </head>
+{% extends "todo_app/base.html" %}
 
-    <body>
-        <div id="header">
-        </div>
+{% block title %}New Task{% endblock %}
 
-        <div id="container">
-            <p>Register a new task:</p>
-            <br>
-            <form method="post">
-                {% csrf_token %}
-                <label for="title">Title</label>
-                <input id="title" type="text" name="title">
-                <br>
-                <label for="comment">Comment</label>
-                <input id="comment" type="text" name="comment">
-                <br>
-                <label for="schedule_date">Scheduled For</label>
-                <input id="schedule_date" type="date" name="schedule_date">
-                <br>
-                <input type="submit" value="Save">
-            </form>
-        </div>
+{% block container %}
 
-        <div id="footer">
-        </div>
-    </body>
-</html>
+    <p>Register a new task:</p>
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div>
+                {{ field.label_tag }} {{ field }}
+                {% if field.help_text %}
+                    {{ field.help_text|safe }}
+                {% endif %}
+            </div>
+        {% endfor %}
+        <input type="submit" value="Save">
+    </form>
+
+{% endblock %}

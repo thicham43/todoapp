@@ -2,10 +2,11 @@ from django.utils import decorators
 from django.contrib.auth.decorators import login_required
 from .models import Task
 from django.views import generic
+from .forms import TaskForm
 
 
 class TaskListView(generic.ListView):
-    template_name = 'todo_app/index.html'
+    template_name = 'todo_app/list_task.html'
     context_object_name = 'all_tasks'
 
     # use: model or queryset or get_queryset
@@ -19,21 +20,22 @@ class TaskListView(generic.ListView):
 
 
 class TaskCreateView(generic.edit.CreateView):
-    template_name = 'todo_app/add_task.html'
     model = Task
-    fields = ['title', 'comment', 'schedule_date']
+    form_class = TaskForm
+    template_name = 'todo_app/add_task.html'
     success_url = "/todo/all"
 
 
 class TaskUpdateView(generic.edit.UpdateView):
-    template_name = 'todo_app/update_task.html'
     model = Task
-    fields = ['title', 'comment', 'schedule_date']
+    form_class = TaskForm
+    template_name = 'todo_app/update_task.html'
     success_url = "/todo/all"
 
 
 class TaskDeleteView(generic.edit.DeleteView):
     model = Task
+    context_object_name = 'task'
     success_url = "/todo/all"
 
     @decorators.method_decorator(login_required)

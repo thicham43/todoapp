@@ -1,0 +1,43 @@
+{% extends "todo_app/base.html" %}
+
+{% block container %}
+
+    {% if not all_tasks %} <p>No tasks are planned yet.</p> {% endif %}
+
+    <form action="{% url "todo_app:add_task" %}" method="post">
+        {% csrf_token %}
+        <strong>{{ count_tasks }} Tasks </strong>
+        <button type="submit">New Task</button>
+    </form>
+    <br>
+    {% if all_tasks %}
+        <table>
+            <thead>
+                <td>Title</td>
+                <td>Comment</td>
+                <td>Scheduled For</td>
+                <td>Overdue ?</td>
+                <td>Actions</td>
+            </thead>
+            {% for task in all_tasks %}
+                <tr>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.comment }}</td>
+                    <td>{{ task.schedule_date }}</td>
+                    <td>
+                        {% if task.is_overdue %}
+                            {{ task.days_overdue }} Day{{ task.days_overdue|pluralize }} ago
+                        {% else %}
+                            Not yet
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url "todo_app:update_task" task.id %}">Edit</a>
+                        <a href="{% url "todo_app:delete_task" task.id %}">Remove</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+{% endblock %}

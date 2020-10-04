@@ -11,8 +11,8 @@ def is_task_overdue(sch_date):
 class Task(models.Model):
 
     title = models.CharField(max_length=50)
-    comment = models.CharField(max_length=200)
-    schedule_date = models.DateField(default=dt.today() + timedelta(days=1))
+    comment = models.TextField(max_length=200, blank=True)
+    schedule_date = models.DateField(default=dt.today().date() + timedelta(days=1))
     is_done = models.BooleanField(default=False)
     is_overdue = models.BooleanField(default=False)
     days_overdue = models.IntegerField(default=0)

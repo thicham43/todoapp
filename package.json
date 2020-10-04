@@ -1,0 +1,23 @@
+{
+  "name": "TodoApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build todo_app/static/todo_app/tailwindcss/tw_style.css -o todo_app/static/todo_app/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thicham43/todoapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thicham43/todoapp/issues"
+  },
+  "homepage": "https://github.com/thicham43/todoapp#readme",
+  "dependencies": {
+    "tailwindcss": "^1.8.10"
+  }
+}
