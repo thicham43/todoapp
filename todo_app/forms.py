@@ -8,7 +8,7 @@ class TaskForm(ModelForm):
         model = Task
         fields = ['title', 'schedule_date', 'comment']
         widgets = {
-            'comment': Textarea(attrs={'cols': 20, 'rows': 5}),
+            'comment': Textarea(attrs={'cols': 20, 'rows': 2, 'placeholder': 'Add details'}),
             'schedule_date': DateInput(format='%Y-%m-%d', attrs={'type': 'date'}),
         }
         help_texts = {
@@ -18,5 +18,8 @@ class TaskForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for vf in self.visible_fields():
-            vf.field.widget.attrs['class'] = 'some_css_class'
+            vf.field.widget.attrs['class'] = 'rounded px-2 w-2/3'
+            if vf.field.label == 'Comment':
+                vf.field.widget.attrs['class'] += ' placeholder-gray-800'
+
 

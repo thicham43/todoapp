@@ -4,17 +4,20 @@
 
 {% block container %}
 
-    <form method="post">
-        {% csrf_token %}
-        {% for field in form %}
-            <div>
-                {{ field.label_tag }} {{ field }}
-                {% if field.help_text %}
-                    {{ field.help_text|safe }}
-                {% endif %}
-            </div>
-        {% endfor %}
-        <input type="submit" value="Save">
-    </form>
+    <div class="flex justify-center">
+        <div class="w-1/2">
+            <p class="self-end text-blue-300 uppercase font-thin">Update task</p>
+            <form method="post" class="mt-5 space-y-2 flex flex-col">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="flex justify-between">
+                        <label for="{{ field.id_for_label }}" class="uppercase font-thin text-md text-gray-300">{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                {% endfor %}
+                <input type="submit" value="UPDATE" class="p-1 rounded-lg bg-indigo-700 text-gray-200 border border-blue-600 shadow-lg hover:border-blue-500">
+            </form>
+        </div>
+    </div>
 
 {% endblock %}
