@@ -6,7 +6,7 @@ from datetime import timedelta, datetime as dt
 class TaskForm(ModelForm):
     class Meta:
         model = Task
-        fields = ['title', 'schedule_date', 'comment']
+        fields = ['title', 'schedule_date', 'importance', 'managed_by', 'tags', 'comment']
         widgets = {
             'comment': Textarea(attrs={'cols': 20, 'rows': 2, 'placeholder': 'Add details'}),
             'schedule_date': DateInput(format='%Y-%m-%d', attrs={'type': 'date'}),
@@ -18,7 +18,9 @@ class TaskForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for vf in self.visible_fields():
-            vf.field.widget.attrs['class'] = 'rounded px-2 w-2/3'
+            vf.field.widget.attrs['class'] = 'rounded px-2 py-1 w-2/3'
+            f = vf.field
+            x = 1
             if vf.field.label == 'Comment':
                 vf.field.widget.attrs['class'] += ' placeholder-gray-800'
 

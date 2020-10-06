@@ -12,10 +12,15 @@
                 {% for field in form %}
                     <div class="flex justify-between">
                         <label for="{{ field.id_for_label }}" class="uppercase font-thin text-md text-gray-300">{{ field.label }}</label>
-                        {{ field }}
+                        {% if field.label == 'Tags' %}
+{#                            {% for t in field.area.all %}{{ area }}<br/>{% endfor %}#}
+                            {{ field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
                     </div>
                 {% endfor %}
-                <input type="submit" value="UPDATE" class="p-1 rounded-lg bg-indigo-700 text-gray-200 border border-blue-600 shadow-lg hover:border-blue-500">
+                <input type="submit" value="UPDATE" class="w-2/3 p-1 self-end rounded-lg bg-indigo-700 text-gray-200 border border-blue-600 shadow-lg hover:border-blue-500">
             </form>
         </div>
     </div>

@@ -1,7 +1,7 @@
 from django.utils import decorators
 from django.contrib.auth.decorators import login_required
-from .models import Task
 from django.views import generic
+from .models import Task
 from .forms import TaskForm
 
 
@@ -41,4 +41,15 @@ class TaskDeleteView(generic.edit.DeleteView):
     @decorators.method_decorator(login_required)
     def delete(self, request, *args, **kwargs):
         return super().delete(request, *args, **kwargs)
+
+
+class TaskSearchView(TaskListView):
+
+    def get_queryset(self):
+        return Task.objects.filter(title__icontains=self.request.GET[self.kwargs['q']])
+
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        context_data['query'] = self.request.GET[self.kwargs['q']]
+        return context_data
 
