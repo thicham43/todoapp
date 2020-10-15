@@ -5,7 +5,8 @@
     <form method="get" action="{% url 'todo_app:search_task' 'q' %}" class="flex justify-center">
         {% csrf_token %}
         <input type="text" name="q" value="{{ query }}" placeholder="Ex: Buy groceries"
-               class="w-1/2 px-2 py-1 rounded-lg bg-gray-300 text-gray-800 placeholder-gray-800 text-center shadow-lg">
+               class="w-1/2 px-2 py-1 rounded-lg bg-gray-200 text-gray-800 placeholder-gray-800
+                      text-center shadow-lg focus:bg-gray-100">
         <input type="submit" value="FIND"
                class="px-2 ml-2 rounded-lg cursor-pointer bg-indigo-700 text-gray-200 border border-blue-600 shadow-lg hover:border-blue-500">
     </form>
@@ -41,13 +42,14 @@
                 </thead>
                 <tbody class="bg-indigo-700 text-gray-300 shadow-lg">
                     {% for task in all_tasks %}
-                        <tr class="space-x-4 text-center shadow-inner {% if forloop.counter|divisibleby:2 %}bg-indigo-600{% endif %}"> {#  #}
+                        <tr id="table-row" onmouseover="display_mark_done()" class="space-x-4 text-center shadow-inner {% if forloop.counter|divisibleby:2 %}bg-indigo-600{% endif %}"> {#  #}
                             <td class="p-2">{{ task.title }}</td>
                             <td class="p-2">{{ task.schedule_date }}</td>
                             <td class="p-2">{{ task.importance|title }}</td>
                             <td class="p-2">{{ task.managed_by }}</td>
                             <td class="p-2">{% for t in task.tags.all %}
-                                                <span class="rounded p-1 bg-{{ t.color }}-600 text-black shadow-md">{{ t }}</span>
+                                                <span class="rounded px-1 bg-{{ t.color }}-600 text-black text-xs shadow-md
+                                                             border border-indigo-800">{{ t }}</span>
                                             {% endfor %}
                             </td>
                             <td class="p-2">

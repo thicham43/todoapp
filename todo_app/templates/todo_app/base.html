@@ -3,8 +3,9 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <link rel="shortcut icon" href="{% static 'todo_app/img/favicon.png' %}" />
+        <link rel="shortcut icon" href="{% static 'todo_app/img/favicon.png' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'todo_app/css/style.css' %}">
+        <script type="text/javascript" src="{% static 'todo_app/js/base.js' %}"></script>
         <title>
             {% block title %}Manage Your TODOs Here{% endblock %}
         </title>
@@ -12,7 +13,7 @@
     <body class="w-full max-w-screen-xl mx-auto px-24 mt-5 bg-indigo-900">
 
         <div id="header" class="flex flex-grow rounded bg-indigo-800 shadow-lg">
-            <div class="px-2 self-center text-gray-400 text-3xl rounded-lg hover:shadow-lg hover:text-gray-200">
+            <div class="px-2 self-center text-gray-400 text-3xl hover:shadow-lg hover:text-gray-200">
                 <a href="{% url 'todo_app:index' %}">TODOs</a>
             </div>
             <div class="w-full px-4 py-2">

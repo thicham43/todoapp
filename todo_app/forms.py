@@ -1,6 +1,5 @@
-from django.forms import ModelForm, Textarea, DateInput
+from django.forms import ModelForm, Textarea, DateInput, CheckboxSelectMultiple
 from .models import Task
-from datetime import timedelta, datetime as dt
 
 
 class TaskForm(ModelForm):
@@ -10,6 +9,7 @@ class TaskForm(ModelForm):
         widgets = {
             'comment': Textarea(attrs={'cols': 20, 'rows': 2, 'placeholder': 'Add details'}),
             'schedule_date': DateInput(format='%Y-%m-%d', attrs={'type': 'date'}),
+            'tags': CheckboxSelectMultiple()
         }
         help_texts = {
             'schedule_date': "When you are planning to achieve this task",
@@ -19,8 +19,6 @@ class TaskForm(ModelForm):
         super().__init__(*args, **kwargs)
         for vf in self.visible_fields():
             vf.field.widget.attrs['class'] = 'rounded px-2 py-1 w-2/3'
-            f = vf.field
-            x = 1
             if vf.field.label == 'Comment':
                 vf.field.widget.attrs['class'] += ' placeholder-gray-800'
 
