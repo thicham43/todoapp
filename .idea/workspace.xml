@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="058f2c50-e856-4295-b262-ab85e80d2926" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo_app/static/todo_app/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/static/todo_app/js/base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo_app/templates/todo_app/add_task.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/templates/todo_app/add_task.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo_app/templates/todo_app/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/templates/todo_app/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo_app/templates/todo_app/list_task.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/templates/todo_app/list_task.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo_app/templates/todo_app/task_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/templates/todo_app/task_confirm_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo_app/templates/todo_app/update_task.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/templates/todo_app/update_task.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/urls.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ixjwqqJId3iCO5LK9JM3rLcv6w" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/todo_app/static/todo_app/img" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\python_code\TodoApp\todo_app\static\todo_app\img" />
+      <recent name="C:\Dev\python_code\TodoApp\movies" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="todo_app" type="Python.DjangoServer" factoryName="Django server">
+      <module name="TodoApp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="TodoApp.settings" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Python37\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="058f2c50-e856-4295-b262-ab85e80d2926" name="Default Changelist" comment="" />
+      <created>1602856378673</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602856378673</updated>
+      <workItem from="1602856380432" duration="344000" />
+      <workItem from="1603463007349" duration="1012000" />
+      <workItem from="1603466188224" duration="293000" />
+      <workItem from="1603726681259" duration="2709000" />
+      <workItem from="1603786958417" duration="5103000" />
+      <workItem from="1603805205117" duration="12452000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602856604949">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1602856604949" />
+    <state width="1557" height="187" key="GridCell.Tab.0.bottom" timestamp="1603806224266">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="187" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1603806224266" />
+    <state width="1557" height="187" key="GridCell.Tab.0.center" timestamp="1603806224266">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="187" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1603806224266" />
+    <state width="1557" height="187" key="GridCell.Tab.0.left" timestamp="1603806224265">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="187" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1603806224265" />
+    <state width="1557" height="187" key="GridCell.Tab.0.right" timestamp="1603806224266">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="187" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1603806224266" />
+  </component>
+</project>

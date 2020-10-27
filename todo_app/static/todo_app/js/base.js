@@ -1,17 +1,11 @@
 console.log("hello");
 
-function display_mark_done(){
-    // var row = document.getElementById("table-row");
-    // console.log("this : ", row);
-    //
-    // var mark_done_btn = document.createElement('a');
-    // row.lastElementChild.firstElementChild.appendChild(mark_done_btn);
+function display_mark_done(row_number){
+    const row = document.getElementById("table-row-"+row_number);
+    row.lastElementChild.firstElementChild.classList.remove("hidden");
+}
 
-        // var table_body = document.getElementsByTagName("tbody")[0];
-        // console.log("tbody : ", table_body);
-        //
-        // table_body.children.every(function (row) {
-        //     console.log("table_row : ", row);
-        // });
-
+function hide_mark_done(row_number){
+    const row = document.getElementById("table-row-"+row_number);
+    row.lastElementChild.firstElementChild.classList.add("hidden");
 }
