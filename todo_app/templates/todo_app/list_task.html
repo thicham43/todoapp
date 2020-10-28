@@ -4,7 +4,7 @@
 {% block search_form %}
     <form method="get" action="{% url 'todo_app:search_task' 'q' %}" class="flex justify-center">
         {% csrf_token %}
-        <input type="text" name="q" value="{{ query }}" placeholder="Ex: Buy groceries"
+        <input type="text" name="q" value="{{ query }}" placeholder="Ex: Work out"
                class="w-1/2 px-2 py-1 rounded-lg bg-gray-200 text-gray-800 placeholder-gray-800
                       text-center shadow-lg focus:bg-gray-100">
         <input type="submit" value="FIND"
@@ -23,6 +23,9 @@
                 No tasks found
             {% endif %}
         </strong>
+        <div>
+            Filters:
+        </div>
         <a href="{% url "todo_app:add_task" %}" class="shadow-lg hover:bg-indigo-800 rounded-full p-1">
             <img src="{% static 'todo_app/img/add.png' %}" class="max-w-xs h-8" title="Add new task">
         </a>
@@ -55,28 +58,31 @@
                                                              border border-indigo-800">{{ t }}</span>
                                             {% endfor %}
                             </td>
-                            <td class="p-1 {% if task.is_overdue %}text-red-500{% endif %}">
-                                {% if task.is_overdue %}
-                                    {{ task.days_overdue }} Day{{ task.days_overdue|pluralize }} ago
-                                {% else %}
-                                    Not yet
-                                {% endif %}
+                            <td class="p-1">
+                                <div id="actions_dropdown_neighbor-{{ forloop.counter }}"
+                                     class="dropdown-neighbor {% if task.is_overdue %}text-red-500{% endif %}">
+                                    {% if task.is_overdue %}
+                                        {{ task.days_overdue }} Day{{ task.days_overdue|pluralize }} ago
+                                    {% else %}
+                                        Not yet
+                                    {% endif %}
+                                </div>
+                                <div id="actions_dropdown-{{ forloop.counter }}"
+                                     class="dropdown-panel flex justify-center shadow rounded-full p-px hidden">
+                                    <a href="{% url "todo_app:update_task" task.id %}" class="hover:bg-gray-500 rounded-full p-px">
+                                        <img src="{% static 'todo_app/img/edit.png'%}" class="max-w-xs h-4" title="Edit Task">
+                                    </a>
+                                    <a href="{% url "todo_app:delete_task" task.id %}" class="ml-2 hover:bg-gray-500 rounded-full p-px">
+                                        <img src="{% static 'todo_app/img/delete.png'%}" class="max-w-xs h-4" title="Delete Task">
+                                    </a>
+                                    <a href="{% url "todo_app:completed_task" task.id %}" class="ml-2 hover:bg-gray-500 rounded-full p-px">
+                                        <img src="{% static 'todo_app/img/checkmark.png' %}" class="max-w-xs h-4" title="Mark as completed">
+                                    </a>
+                                </div>
                             </td>
                             <td class="p-1">
-                                <div class="px-1 font-bold cursor-pointer hover:bg-indigo-800 rounded" title="Actions"
-                                     onclick="hide_mark_done({{ forloop.counter }})">⋮</div>
-{#                            <td class="p-1 font-thin text-sm text-gray-500 hover:text-gray-300">#}
-{#                                <div class="flex hidden">#}
-{#                                    <a href="{% url "todo_app:update_task" task.id %}" class="hover:bg-indigo-800 rounded-full p-1">#}
-{#                                        <img src="{% static 'todo_app/img/edit.png'%}" class="max-w-xs h-5" title="Edit Task">#}
-{#                                    </a>#}
-{#                                    <a href="{% url "todo_app:delete_task" task.id %}" class="ml-1 hover:bg-indigo-800 rounded-full p-1">#}
-{#                                        <img src="{% static 'todo_app/img/delete.png'%}" class="max-w-xs h-5" title="Delete Task">#}
-{#                                    </a>#}
-{#                                    <a href="{% url "todo_app:completed_task" task.id %}" class="ml-1 hover:bg-indigo-800 rounded-full p-1">#}
-{#                                        <img src="{% static 'todo_app/img/checkmark.png' %}" class="max-w-xs h-5" title="Mark as completed">#}
-{#                                    </a>#}
-{#                                </div>#}
+                                <div id="actions_dropdown_btn" class="px-1 font-bold cursor-pointer hover:bg-indigo-800 rounded" title="Actions"
+                                     onclick="show_actions({{ forloop.counter }})">⋮</div>
                             </td>
                         </tr>
                     {% endfor %}

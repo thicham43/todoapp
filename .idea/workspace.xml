@@ -16,18 +16,19 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:dj-advanced" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="058f2c50-e856-4295-b262-ab85e80d2926" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo_app/static/todo_app/js/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/static/todo_app/js/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo_app/templates/todo_app/add_task.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/templates/todo_app/add_task.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo_app/templates/todo_app/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/templates/todo_app/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo_app/templates/todo_app/list_task.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/templates/todo_app/list_task.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo_app/templates/todo_app/task_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/templates/todo_app/task_confirm_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo_app/templates/todo_app/update_task.html" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/templates/todo_app/update_task.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo_app/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +109,9 @@
       <workItem from="1603466188224" duration="293000" />
       <workItem from="1603726681259" duration="2709000" />
       <workItem from="1603786958417" duration="5103000" />
-      <workItem from="1603805205117" duration="12452000" />
+      <workItem from="1603805205117" duration="12683000" />
+      <workItem from="1603876995985" duration="3483000" />
+      <workItem from="1603893387638" duration="6600000" />
     </task>
     <servers />
   </component>
@@ -120,7 +123,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dj-advanced" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -132,21 +147,25 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="254" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1602856604949" />
-    <state width="1557" height="187" key="GridCell.Tab.0.bottom" timestamp="1603806224266">
+    <state width="1557" height="78" key="GridCell.Tab.0.bottom" timestamp="1603881866112">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="187" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1603806224266" />
-    <state width="1557" height="187" key="GridCell.Tab.0.center" timestamp="1603806224266">
+    <state width="1557" height="78" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1603881866112" />
+    <state width="1557" height="78" key="GridCell.Tab.0.center" timestamp="1603881866111">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="187" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1603806224266" />
-    <state width="1557" height="187" key="GridCell.Tab.0.left" timestamp="1603806224265">
+    <state width="1557" height="78" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1603881866111" />
+    <state width="1557" height="78" key="GridCell.Tab.0.left" timestamp="1603881866111">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="187" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1603806224265" />
-    <state width="1557" height="187" key="GridCell.Tab.0.right" timestamp="1603806224266">
+    <state width="1557" height="78" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1603881866111" />
+    <state width="1557" height="78" key="GridCell.Tab.0.right" timestamp="1603881866112">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="187" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1603806224266" />
+    <state width="1557" height="78" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1603881866112" />
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1603819056036">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1603819056036" />
   </component>
 </project>
