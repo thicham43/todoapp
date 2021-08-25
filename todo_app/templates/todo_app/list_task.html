@@ -16,15 +16,17 @@
 {% block container %}
 
     <div class="flex justify-between">
-        <strong class="self-end font-thin text-md text-blue-300 uppercase">
+        <span class="self-end font-thin text-md text-blue-300 uppercase">
             {% if count_tasks %}
                 {{ count_tasks }} Task{{ count_tasks|pluralize }}
             {% else %}
                 No tasks found
             {% endif %}
-        </strong>
-        <div>
-            Filters:
+        </span>
+        <div class="self-end w-3/4">
+            <span class="mx-2 text-md text-blue-300">Today's</span>
+            <span class="mx-2 text-md text-blue-300">Overdue</span>
+            <span class="mx-2 text-md text-blue-300">Completed</span>
         </div>
         <a href="{% url "todo_app:add_task" %}" class="shadow-lg hover:bg-indigo-800 rounded-full p-1">
             <img src="{% static 'todo_app/img/add.png' %}" class="max-w-xs h-8" title="Add new task">
